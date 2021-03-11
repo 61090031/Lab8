@@ -19,6 +19,7 @@ class Simple_drawing_window(QWidget):
 
         self.layout.addWidget(self.canvas)
         self.layout.addWidget(self.clear_btn)
+    
     def paintEvent(self, e):
         p = QPainter()
         p.begin(self)
@@ -32,6 +33,13 @@ class Simple_drawing_window(QWidget):
         self.points = []
         self.update()
 
+def main():
+    app = QApplication(sys.argv)
+
+    w = Simple_drawing_window()
+    w.show()
+
+    return app.exec_()
 
 if __name__ == "__main__":
     sys.exit(main())
