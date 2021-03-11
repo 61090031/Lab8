@@ -30,7 +30,7 @@ class Disk():
         self.x = x
         self.y = y
         self.showdisk()
-
+#///
     def cleardisk(self):
         pu()
         goto(self.x, self.y)
