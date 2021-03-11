@@ -119,3 +119,5 @@ class Hanoi(object):
 h = Hanoi()
 h.solve()
 x = input()
+
+##FIxed
