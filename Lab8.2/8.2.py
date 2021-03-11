@@ -19,6 +19,18 @@ class Simple_drawing_window(QWidget):
 
         self.layout.addWidget(self.canvas)
         self.layout.addWidget(self.clear_btn)
+    def paintEvent(self, e):
+        p = QPainter()
+        p.begin(self)
+        p.setPen(QColor(0, 0, 0))
+        p.setBrush(QColor(0, 0, 0))
+        for point in self.points:
+            p.drawPie(point.x(), point.y(), 10, 10, 0, 180 * 32)
+        p.end()
+    
+    def clear_drawing(self):
+        self.points = []
+        self.update()
 
 
 if __name__ == "__main__":
